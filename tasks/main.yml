@@ -1,0 +1,17 @@
+- name: change normal user passwd
+  user: 
+    name: "{{ item.name }}"
+    password: "{{ item.passwd | password_hash('sha512') }}"
+    update_password: always
+  with_items: '{{ userinfo }}'
+
+- name: show value
+  shell: |
+     echo "{{ item.name }}" "{{ item.passwd| password_hash('sha512') }}" >>/tmp/u.info
+  with_items: "{{ userinfo }}"
+
+- name: change root passwd
+  user:
+    name: root
+    password: "{{ rootpasswd | password_hash('sha512') }}"
+    update_password: always

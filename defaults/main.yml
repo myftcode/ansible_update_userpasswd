@@ -1,0 +1,3 @@
+userinfo:
+- { name: 'test',passwd: 'passwd' }
+rootpasswd: 'passwd'

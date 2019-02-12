@@ -3,7 +3,7 @@
     name: "{{ item.name }}"
     password: "{{ item.passwd | password_hash('sha512') }}"
     update_password: always
-  with_items: '{{ userinfo }}'
+  with_items: "{{ userinfo }}"
 
 # 查看列表userinfo输出到目标机器中的值，user模块，密码需要使用password_hash('sha512')加密
 #- name: show value

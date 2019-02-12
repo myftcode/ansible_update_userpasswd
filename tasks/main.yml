@@ -5,10 +5,11 @@
     update_password: always
   with_items: '{{ userinfo }}'
 
-- name: show value
-  shell: |
-     echo "{{ item.name }}" "{{ item.passwd| password_hash('sha512') }}" >>/tmp/u.info
-  with_items: "{{ userinfo }}"
+# 查看列表userinfo输出到目标机器中的值，user模块，密码需要使用password_hash('sha512')加密
+#- name: show value
+#  shell: |
+#     echo "{{ item.name }}" "{{ item.passwd| password_hash('sha512') }}" >>/tmp/u.info
+#  with_items: "{{ userinfo }}"
 
 - name: change root passwd
   user:

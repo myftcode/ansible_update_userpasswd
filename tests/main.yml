@@ -1,4 +1,4 @@
 - hosts: all
   become: yes
   roles:
-   - { role: update_user_passwd }
+   - { role: ansible_update_user_passwd }

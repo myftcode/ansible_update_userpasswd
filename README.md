@@ -9,12 +9,17 @@ ansible-playbook -i tests/inventory tests/main.yml --private-key=/root/.ssh/id_r
 ```
 自定义用户变量
 defaultes/main.yml
+  定义用户和密码
+  userinfo:
+  - { name: 'test',passwd: 'passwd' }
+  - { ... }
 
-定义用户和密码
-userinfo:
-- { name: 'test',passwd: 'passwd' }
-- { ... }
+  定义root密码
+  rootpasswd: 'passwd'
 
-定义root密码
-rootpasswd: 'passwd'
+
+资产文件，和ansible play文件 的示例
+tests/main.yml
+tests/inventory
+
 ```
